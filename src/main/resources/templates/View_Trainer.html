@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Institude Managment:View Trainer</title>
+</head>
+<body>
+	
+	<h2 align="center"> All Trainers</h2>
+	<br>
+	
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>COURCE</th>
+			<th>SALARY</th>
+			<th>UPDADE</th>
+			<th>DELETE</th>
+		</tr>
+		
+		<tr th:each="trainer : ${listTrainer}">
+			<td th:text="${trainer.id}"></td>
+			<td th:text="${trainer.name}"></td>
+			<td th:text="${trainer.cource}"></td>
+			<td th:text="${trainer.salary}"></td>
+			 
+			 <td><a th:href="@{/updateTrainer/{id}(id=${trainer.id})}">Update</a></td>
+			
+			<td><a th:href="@{/deleteTrainerbyId/{id}(id=${trainer.id})}">DELETE</a></td>
+
+		</tr>
+	</table>
+	
+	<br>
+	<a href="/viwe_From"> Add Trainer Here</a>
+	
+
+</body>
+</html>

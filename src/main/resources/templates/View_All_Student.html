@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Institude Managment:View Student</title>
+</head>
+<body>
+	
+	<h2 align="center"> All Student</h2>
+	<br>
+	
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>ADDRESS</th>
+			<th>EMAIL</th>
+			<th>AGE</th>
+			<th>TRAINER NAME</th>
+			<th>UPDATE</th>
+			<th>DELETE</th>
+		</tr>
+		
+		<tr th:each="student : ${listStudent}">
+			<td th:text="${student.id}"></td>
+			<td th:text="${student.name}"></td>
+			<td th:text="${student.address}"></td>
+			<td th:text="${student.email}"></td>
+			<td th:text="${student.age}"></td>
+			
+			<td th:text="${student.trainer != null?student.trainer.name: 'No Trainer Assingn'}"></td>
+			
+			<td><a th:href="@{/updateStudent/{id}(id=${student.id})}">UPDATE</a></td>
+			
+			<td><a th:href="@{/deleteStudent/{id}(id=${student.id})}">DELETE</a></td>
+
+		</tr>
+	</table>
+	
+	<br>
+	<a href="/add_Student_Form"> Add New Student</a>
+	
+
+</body>
+</html>

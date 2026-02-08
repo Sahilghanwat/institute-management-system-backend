@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form th:action="@{/trainer/{id}(id=${trainer_up.id})}" method="POST" th:object="${trainer_up}" >
+		<div>Trainer Name : <input type="text" th:field="*{name}"> </div>
+		<div>Trainer Course : <input type="text" th:field="*{cource}"> </div>
+		<div>Trainer Salary : <input type="number" th:field="*{salary}"> </div>
+		<button type="submit" value="Add">Update</button>
+	</form>
+
+</body>
+</html>
