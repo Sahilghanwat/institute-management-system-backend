@@ -35,11 +35,15 @@ public class User_Controller {
 		return "Registeration";
 	}
 	
+	@Autowired
+	private org.springframework.security.crypto.password.PasswordEncoder passwordEncoder;
+
 	@PostMapping("/saveUser")
-	public String saveUser(@ModelAttribute("userdata") User user)
-	{
-		user_ser.saveUser(user);
-		return "redirect:/AllUsers";
+	public String saveUser(@ModelAttribute("userdata") User user) {
+	    user.setPassword(passwordEncoder.encode(user.getPassword()));
+	    user.setRole("STUDENT");
+	    user_ser.saveUser(user);
+	    return "redirect:/AllUsers";
 	}
 	
 	

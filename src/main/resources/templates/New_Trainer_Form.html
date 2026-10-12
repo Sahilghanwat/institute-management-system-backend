@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body align="center">
-
+<body>
+	
+	<h2>Add Trainer Details</h2>
 	<form action="/saveTrainer" method="POST" th:object="${trainer}" >
 		<div>Trainer Name : <input type="text" th:field="*{name}"> </div>
 		<div>Trainer Course : <input type="text" th:field="*{cource}"> </div>

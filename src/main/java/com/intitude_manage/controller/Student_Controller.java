@@ -21,7 +21,6 @@ public class Student_Controller {
 	private Trainer_Service trainer_ser;
 	
 	
-	// Show All Student 
 	
 	@GetMapping("/getAllStudent")
 	public String ShowAllStudent(Model model)
